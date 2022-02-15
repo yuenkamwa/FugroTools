@@ -1,5 +1,5 @@
-from src.FugroTools import Request
-
+# from src.FugroTools import Request
+from FugroTools import Request
 
 if __name__ == '__main__':
     url_summary = 'https://jsonplaceholder.typicode.com/comments?postId=1'
