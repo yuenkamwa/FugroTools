@@ -2,7 +2,14 @@ import requests, time
 
 def GetData(url, jsonData):
     r = requests.post(url, jsonData)
-    return r.json()
+    while True:
+        if 200 <= r.status_code <= 226:
+            return "OK", r.json(), r.status_code
+        else:
+            break
+    return "Fail", None, r.status_code
+
+
 
 def delay(milliseconds=500):
     count = int(milliseconds / 25)
